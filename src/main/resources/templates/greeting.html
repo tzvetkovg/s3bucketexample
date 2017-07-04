@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+<form action="http://mynewdulibucket.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+    Key to upload:
+    <input type="input"  name="key" value="user/user1/${filename}" /><br />
+    <input type="hidden" name="acl" value="public-read" />
+    <input type="hidden" name="success_action_redirect" value="http://mynewdulibucket.s3.amazonaws.com/successful_upload.html" />
+    Content-Type:
+    <input type="input"  name="Content-Type" value="image/jpeg" /><br />
+    <input type="hidden" name="x-amz-meta-uuid" value="14365123651274" />
+    <input type="hidden" name="x-amz-server-side-encryption" value="AES256" />
+    <input type="text"   name="X-Amz-Credential" value="AKIAJQHQNWQ7FCTGNKQQ/20151229/us-east-1/s3/aws4_request" />
+    <input type="text"   name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" />
+    <input type="text"   name="X-Amz-Date" value="20151229T000000Z" />
+
+    Tags for File:
+    <input type="input"  name="x-amz-meta-tag" value="" /><br />
+    <input type="hidden" name="Policy" value='eyJleHBpcmF0aW9uIjoiMjAxNS0xMi0zMFQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W3siYnVja2V0IjoibXluZXdkdWxpYnVja2V0In0sWyJzdGFydHMtd2l0aCIsIiRrZXkiLCJ1c2VyL3VzZXIxLyJdLHsiYWNsIjoicHVibGljLXJlYWQifSx7InN1Y2Nlc3NfYWN0aW9uX3JlZGlyZWN0IjoiaHR0cDovL215bmV3ZHVsaWJ1Y2tldC5zMy5hbWF6b25hd3MuY29tL3N1Y2Nlc3NmdWxfdXBsb2FkLmh0bWwifSxbInN0YXJ0cy13aXRoIiwiJENvbnRlbnQtVHlwZSIsImltYWdlLyJdLHsieC1hbXotbWV0YS11dWlkIjoiMTQzNjUxMjM2NTEyNzQifSx7IngtYW16LXNlcnZlci1zaWRlLWVuY3J5cHRpb24iOiJBRVMyNTYifSxbInN0YXJ0cy13aXRoIiwiJHgtYW16LW1ldGEtdGFnIiwiIl0seyJ4LWFtei1jcmVkZW50aWFsIjoiQUtJQUpRSFFOV1E3RkNUR05LUVEvMjAxNTEyMjkvdXMtZWFzdC0xL3MzL2F3czRfcmVxdWVzdCJ9LHsieC1hbXotYWxnb3JpdGhtIjoiQVdTNC1ITUFDLVNIQTI1NiJ9LHsieC1hbXotZGF0ZSI6IjIwMTUxMjI5VDAwMDAwMFoifV19' />
+    <input type="hidden" name="X-Amz-Signature" value="QLHzx42tZSDqRix0KlBhQGjfJImIsWLjpWMb+wPPe1s=" />
+    File:
+    <input type="file"   name="file" /> <br />
+    <!-- The elements after this will be ignored -->
+    <input type="submit" name="submit" value="Upload to Amazon S3" />
+</form>
+</body>
+</html>
